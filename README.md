@@ -1,4 +1,4 @@
-![image](https://github.com/jiajiaanan/restaurantList/blob/main/localhost_3000_220909.png)
+![image](https://github.com/jiajiaanan/restaurantList_refactor/blob/main/localhost_3000_220909.png)
 
 ## 介紹
 
