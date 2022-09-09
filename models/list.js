@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema //模組
 const listSchema = new Schema({ //新建schema
-    name:{
+    name: {
         type: String, // 資料型別是字串
         required: true
     },
-    name_en:{
+    name_en: {
         type: String
     },
-    category:{
+    category: {
         type: String,
         required: true
     },
-    image:{
+    image: {
         type: String,
-        required: true
+        // required: true
     },
-    location:{
+    location: {
         type: String,
         // required: true
     },
@@ -24,15 +24,15 @@ const listSchema = new Schema({ //新建schema
         type: String,
         // required: true
     },
-    google_map:{
+    google_map: {
         type: String,
         // required: true
     },
-    rating:{
+    rating: {
         type: Number,
         required: true
     },
-    description:{
+    description: {
         type: String,
         // required: true
     }

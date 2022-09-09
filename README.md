@@ -1,4 +1,4 @@
-![image](https://github.com/jiajiaanan/restaurantList/blob/main/screenshot.png)
+![image](https://github.com/jiajiaanan/restaurantList/blob/main/localhost_3000_220909.png)
 
 ## 介紹
 
@@ -9,6 +9,11 @@
 - 查看所有餐廳清單
 - 可查看每家餐廳詳細資料
 - 搜尋餐廳
+- 新建餐廳
+- 刪除餐廳
+- 編輯餐廳資料
+- 篩選顯示排序
+
 
 ## 開始使用
 
@@ -16,13 +21,13 @@
 2. 在終端機使用 git clone 複製 GitHub 的專案到本機端
     
     ```jsx
-    git clone https://github.com/jiajiaanan/restaurantList.git
+    git clone https://github.com/jiajiaanan/restaurantList_refactor.git
     ```
     
 3. 透過終端機進入專案資料夾
     
     ```jsx
-    cd restaurant_list
+    cd restaurantList_refactor
     ```
     
 4. 安裝 npm套件，在終端機輸入：
@@ -57,3 +62,6 @@
 - Express-Handlebars 3.0.0
 - Bootstrap 5.2
 - Font-awesome 6.1.2
+- method-override 3.0.0
+- mongoose 6.5.4
+# restaurantList_refactor
