@@ -1,9 +1,8 @@
-
 <div class="container">
   <div class="card w-50 m-auto my-5">
     <div class="card-body">
       {{!-- form-start --}}
-      <form action="/lists/{{ list._id }}/edit" method="POST">
+      <form action="/lists/{{ list._id }}?_method=PUT" method="POST">
         <div class="mb-3 row">
           <label for="name" class="col-sm-3 col-form-label">餐廳名稱</label>
           <div class="col-sm-9">
@@ -76,4 +75,3 @@
     </div>
   </div>
 </div>
-

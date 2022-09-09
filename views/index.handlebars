@@ -45,11 +45,15 @@
         </div>
       </a>
 
+      {{!-- button icon --}}
       <div class="text-end mb-5">
+        {{!-- edit --}}
         <a href="./lists/{{ this._id }}/edit" class="btn btn-outline-secondary btn-sm"><i
             class="fa-solid fa-pen-to-square"></i></a>
+        {{!-- detail --}}
         <a href="./lists/{{ this._id }}" class="btn btn-outline-secondary btn-sm"><i class="fas fa-search"></i></a>
-        <form action="./lists/{{ this._id }}/delete" method="POST" style="display: inline;">
+        {{!-- delete --}}
+        <form action="./lists/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
           <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
         </form>
       </div>
