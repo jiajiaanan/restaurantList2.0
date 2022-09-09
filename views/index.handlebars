@@ -16,14 +16,30 @@
   </div>
 </div>
 
+
+
+
+
 <!-- restaurant list -->
 <div class="container mt-5 px-5">
 
-  <div class="text-end mb-4">
-    <a href="./lists/new" class="btn btn-major" id="creare-btn"><i class="fa-solid fa-plus"></i> Create a new
-      restaurant</a>
+  {{!-- sort --}}
+  <div class="d-flex align-items-center justify-content-end mb-3">
+    <i class="fa-solid fa-sort text-secondary me-2"></i>
+    <i class="fa-solid fa-arrow-up-arrow-down text-secondary"></i>
+    <form action="./sortby" method="GET" id="sortby">
+      <select onchange="this.form.submit()" class="form-select" name="sort" form="sortby">
+        <option selected>選擇排序</option>
+        <option value="name">A -> Z</option>
+        <option value="name-deasc">Z -> A</option>
+        <option value="category">類別</option>
+        <option value="location">地區</a>
+        </option>
+      </select>
+    </form>
   </div>
 
+  {{!-- display restaurant lists --}}
   <div class="row">
     {{#each lists}}
     <div class="col col-md-4">

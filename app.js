@@ -20,15 +20,7 @@ app.use(methodOverride('_method'))
 // 載入路由模組
 app.use(routes)
 
-//搜尋功能
-app.get('/search', (req, res) => {
-  const keyword = req.query.keyword.toLowerCase()
-  List.find()
-    .lean()
-    .then(lists => lists.filter(list => list.name.toLowerCase().includes(keyword) || list.category.toLowerCase().includes(keyword)))
-    .then(lists => res.render('index', { lists, keyword }))
-    .catch(error => console.error(error))
-})
+
 
 app.listen(port, () => {
   console.log('http://localhost:3000/ connected')
