@@ -25,26 +25,26 @@ router.get('/search', (req, res) => {
 //分類功能
 router.get('/sortby', (req, res) => {
   const sortitem = req.query.sort //分類項目
-  
-  if (req.query.sort === "name") {
+
+  if (sortitem === "name") {
     return List.find()
       .lean()
       .sort({ name: 'asc' }) //照分類項目排正序
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
-  } else if (req.query.sort === "name-deasc") {
+  } else if (sortitem === "name-deasc") {
     return List.find()
       .lean()
       .sort({ name: 'desc' })
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
-  } else if (req.query.sort === "category") {
+  } else if (sortitem === "category") {
     return List.find()
       .lean()
       .sort({ category: 'asc' })
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
-  } else if (req.query.sort === "location") {
+  } else if (sortitem === "location") {
     return List.find()
       .lean()
       .sort({ location: 'asc' })
