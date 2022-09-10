@@ -36,7 +36,8 @@
         <div class="mb-3 row">
           <label for="rating" class="col-sm-3 col-form-label">評分</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" name="rating" max="5" min="0" value="{{ list.rating }}">
+            <input type="number" class="form-control" name="rating" max="5" min="0" step="0.1" value="{{ list.rating }}"
+              required>
           </div>
         </div>
 
