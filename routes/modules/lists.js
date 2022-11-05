@@ -10,8 +10,9 @@ router.get('/new', (req, res) => {
 
 //show頁面路由
 router.get('/:id', (req, res) => {
-  const id = req.params.id //動態路由
-  return List.findById(id) //從資料庫查出資料
+  const userId = req.user._id
+  const _id = req.params.id
+  return List.findOne({ _id, userId }) //從資料庫查出該使用者資料
     .lean()
     .then((list) => res.render('show', { list }))
     .catch(error => console.log(error))
@@ -19,8 +20,9 @@ router.get('/:id', (req, res) => {
 
 //edit頁面路由
 router.get('/:id/edit', (req, res) => {
-  const id = req.params.id
-  return List.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return List.findOne({ _id, userId })
     .lean() //把資料變成單純陣列
     .then((list) => res.render('edit', { list }))
     .catch(error => console.log(error))
@@ -28,25 +30,18 @@ router.get('/:id/edit', (req, res) => {
 
 //Create功能
 router.post('/', (req, res) => {
-  return List.create({
-    name: req.body.name,
-    name_en: req.body.name_en,
-    category: req.body.category,
-    image: req.body.image,
-    location: req.body.location,
-    phone: req.body.phone,
-    google_map: req.body.google_map,
-    rating: req.body.rating,
-    description: req.body.description,
-  })
+  const userId = req.user._id
+  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
+  return List.create({ name, name_en, category, image, location, phone, google_map, rating, description, userId })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
 //Update功能
 router.put('/:id', (req, res) => {
-  const id = req.params.id
-  return List.findById(id) //查詢單筆資料
+  const userId = req.user._id
+  const _id = req.params.id
+  return List.findOne({ _id, userId }) //查詢單筆資料
     .then(list => {
       list.name = req.body.name
       list.name_en = req.body.name_en
@@ -57,20 +52,21 @@ router.put('/:id', (req, res) => {
       list.google_map = req.body.google_map
       list.rating = req.body.rating
       list.description = req.body.description
+      console.log('data updated')
       return list.save() //重新儲存單筆資料
     })
-    .then(() => res.redirect(`/lists/${id}`)) //導向detail頁
+    .then(() => res.redirect(`/lists/${_id}`)) //導向detail頁
     .catch(error => console.log(error))
 })
 
 //Delete功能
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  return List.findById(id) //查詢該筆資料
+  const userId = req.user._id
+  const _id = req.params.id
+  return List.findOne({ _id, userId }) //查詢該筆資料
     .then(list => list.remove()) //刪除該筆資料
     .then(() => res.redirect('/')) //導向根目錄頁
     .catch(error => console.log(error))
 })
-
 
 module.exports = router

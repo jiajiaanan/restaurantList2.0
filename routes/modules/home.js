@@ -4,7 +4,8 @@ const router = express.Router()
 const List = require('../../models/list')
 
 router.get('/', (req, res) => {
-  List.find()
+  const userId = req.user._id   // 變數設定
+  List.find({ userId })
     .lean()
     .sort({ _id: 'asc' })
     .then(lists => res.render('index', { lists }))
