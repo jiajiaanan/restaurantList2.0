@@ -2,6 +2,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 require('./config/mongoose')
 
 
@@ -25,6 +26,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(methodOverride('_method'))
+
+usePassport(app)
 // 載入路由模組
 app.use(routes)
 
