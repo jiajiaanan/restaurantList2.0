@@ -13,6 +13,12 @@ router.get('/register', (req, res) => {
   res.render('register')
 })
 
+//登出：導向登入頁
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/users/login')
+})
+
 //登入功能
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
