@@ -21,7 +21,7 @@
 2. 在終端機使用 git clone 複製 GitHub 的專案到本機端
     
     ```jsx
-    git clone https://github.com/jiajiaanan/restaurantList_refactor.git
+    git clone https://github.com/jiajiaanan/restaurantList2.0.git
     ```
     
 3. 透過終端機進入專案資料夾
