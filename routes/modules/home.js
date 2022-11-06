@@ -15,13 +15,13 @@ router.get('/', (req, res) => {
 //搜尋功能
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase()
-  List.find()
+  const userId = req.user._id
+  List.find({ userId })
     .lean()
     .then(lists => lists.filter(list => list.name.toLowerCase().includes(keyword) || list.category.toLowerCase().includes(keyword)))
     .then(lists => res.render('index', { lists, keyword }))
     .catch(error => console.error(error))
 })
-
 
 //分類功能
 router.get('/sortby', (req, res) => {

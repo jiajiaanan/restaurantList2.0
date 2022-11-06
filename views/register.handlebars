@@ -1,6 +1,6 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
-    <div class="card card-body mb-5">
+    <div class="card card-body mb-5 text-secondary">
       <h1 class="text-center mt-3">Register</h1>
       {{> message}}
       <form action="/users/register" method="POST">
@@ -23,10 +23,10 @@
           <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
             placeholder="Confirm Password" value="{{ confirmPassword }}">
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <button type="submit" class="btn btn-major btn-block">Register</button>
       </form>
       <p class="lead mt-4">
-        Have An Account? <a href="/users/login">Login</a>
+        Have An Account? <a href="/users/login" class="text-info">Login</a>
       </p>
     </div>
   </div>
