@@ -6,9 +6,13 @@ const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 require('./config/mongoose')
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const routes = require('./routes')
 const app = express()
-const port = 3000
+const PORT = 3000
 
 // require packages used in the project
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -45,6 +49,6 @@ app.use(routes)
 
 
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log('http://localhost:3000/ connected')
 })
