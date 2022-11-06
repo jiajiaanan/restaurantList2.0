@@ -1,11 +1,13 @@
-![image](https://github.com/jiajiaanan/restaurantList_refactor/blob/main/localhost_3000_220909.png)
+![image](/restaurantListPreview.png)
 
 ## 介紹
 
 創建屬於自己的餐廳清單
 
 ## 功能
-
+- 使用本地登入策略登入使用者資料
+- 使用Facebook登入策略登入使用者資料
+- 註冊使用者資料
 - 查看所有餐廳清單
 - 可查看每家餐廳詳細資料
 - 搜尋餐廳
@@ -27,7 +29,7 @@
 3. 透過終端機進入專案資料夾
     
     ```jsx
-    cd restaurantList_refactor
+    cd restaurantList2.0
     ```
     
 4. 安裝 npm套件，在終端機輸入：
@@ -64,3 +66,10 @@
 - Font-awesome 6.1.2
 - method-override 3.0.0
 - mongoose 6.5.4
+- express-session 1.17.1
+- passport 0.4.1
+- passport-facebook 3.0.0
+- passport-local 1.0.0
+- dotenv 8.2.0
+- connect-flash 0.1.1
+- bcryptjs 2.4.3
