@@ -26,27 +26,28 @@ router.get('/search', (req, res) => {
 //分類功能
 router.get('/sortby', (req, res) => {
   const sortitem = req.query.sort //分類項目
+  const userId = req.user._id
 
   if (sortitem === "name") {
-    return List.find()
+    return List.find({ userId })
       .lean()
       .sort({ name: 'asc' }) //照分類項目排正序
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
   } else if (sortitem === "name-deasc") {
-    return List.find()
+    return List.find({ userId })
       .lean()
       .sort({ name: 'desc' })
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
   } else if (sortitem === "category") {
-    return List.find()
+    return List.find({ userId })
       .lean()
       .sort({ category: 'asc' })
       .then(lists => res.render('index', { lists }))
       .catch(error => console.error(error))
   } else if (sortitem === "location") {
-    return List.find()
+    return List.find({ userId })
       .lean()
       .sort({ location: 'asc' })
       .then(lists => res.render('index', { lists }))
